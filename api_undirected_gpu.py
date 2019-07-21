@@ -204,9 +204,9 @@ class UndirectedNetworkAnalysis:
         return x / len(li)
 
     
-    @classmethod
+    @staticmethod
     @vectorize(['float32(float32, float32)'], target='cuda')
-    def sample(self, gr):
+    def sample(gr):
         eff = []
         num_nodes = len(gr.vs)
         components = UndirectedNetworkAnalysis.avg((gr.clusters()))
